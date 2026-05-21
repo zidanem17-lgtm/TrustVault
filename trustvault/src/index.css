@@ -1,0 +1,50 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: #f4f4f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Animations ── */
+@keyframes tv-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes tv-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes tv-sc {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes tv-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.18; }
+}
+@keyframes tv-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tv-up  { animation: tv-up  0.5s  cubic-bezier(0.22, 1, 0.36, 1) both; }
+.tv-in  { animation: tv-in  0.4s  ease both; }
+.tv-sc  { animation: tv-sc  0.35s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.tv-msg { animation: tv-up  0.26s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.tv-d1 { animation: tv-blink 1.3s ease infinite; }
+.tv-d2 { animation: tv-blink 1.3s ease 0.22s infinite; }
+.tv-d3 { animation: tv-blink 1.3s ease 0.44s infinite; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); border-radius: 2px; }
